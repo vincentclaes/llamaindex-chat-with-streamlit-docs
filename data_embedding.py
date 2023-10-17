@@ -7,6 +7,8 @@ from llama_index import VectorStoreIndex, StorageContext
 from pathlib import Path
 import argparse
 
+INDEX = "RandstadDigital"
+
 
 def get_pdf_files(base_path, loader):
     """
@@ -39,7 +41,7 @@ def get_pdf_files(base_path, loader):
     return pdf_paths
 
 
-def main(data_dir, index_name="Main", query=None):
+def main(data_dir, index_name=INDEX, query=None):
     PDFReader = download_loader("PDFReader")
     loader = PDFReader()
 
